@@ -34,7 +34,8 @@ class Snake:
             for seg_num in range(len(self.segments) - 1, 0, -1):
                 x = self.segments[seg_num - 1].xcor()
                 y = self.segments[seg_num - 1].ycor()
-        
+                print(x)
+                print(y)
                 self.segments[seg_num].goto(x, y)
                 
                 # if self.segments[seg_num].xcor() > 600:
