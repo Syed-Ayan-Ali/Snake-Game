@@ -21,6 +21,18 @@ class Snake:
             new_segment.penup()
             new_segment.goto(position)
             self.segments.append(new_segment)
+            print("SEgments: ",self.segments)
+    
+    def increase(self):
+        new_x = self.segments[len(self.segments) - 1].xcor()
+        new_y = self.segments[len(self.segments) - 1].ycor()
+        new_segment = Turtle("square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto((new_x, new_y))
+        self.segments.append(new_segment)
+        print("new Segments: ",self.segments)
+    
 
     def move(self):
             
@@ -34,8 +46,7 @@ class Snake:
             for seg_num in range(len(self.segments) - 1, 0, -1):
                 x = self.segments[seg_num - 1].xcor()
                 y = self.segments[seg_num - 1].ycor()
-                print(x)
-                print(y)
+               
                 self.segments[seg_num].goto(x, y)
                 
                 # if self.segments[seg_num].xcor() > 600:
