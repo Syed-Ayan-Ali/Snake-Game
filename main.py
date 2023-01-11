@@ -9,6 +9,14 @@ screen.tracer(0)
 
 snake = Snake()
 
+# Key Listeners
+
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
 GAME_STATE = "PLAY"
 while GAME_STATE == "PLAY":
     screen.update()
