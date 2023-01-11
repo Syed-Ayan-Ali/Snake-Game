@@ -1,7 +1,5 @@
 from turtle import Turtle
 
-
-
 STARTING_POSITIONS = [(0, 0), (20, 0), (40, 0)]
 MOVE_DISTANCE = 20
 TURN_ANGLE = 90
@@ -25,7 +23,7 @@ class Snake:
             self.segments.append(new_segment)
 
     def move(self):
-
+            
             # To implement the behaviour where the snake can turn with the other segments connected,
             # we need to make sure the segments are linked to one another.
 
@@ -36,8 +34,15 @@ class Snake:
             for seg_num in range(len(self.segments) - 1, 0, -1):
                 x = self.segments[seg_num - 1].xcor()
                 y = self.segments[seg_num - 1].ycor()
+        
                 self.segments[seg_num].goto(x, y)
+                
+                # if self.segments[seg_num].xcor() > 600:
+                #     self.segments[seg_num].xcor() = -600
+
             self.head.forward(MOVE_DISTANCE)
+            
+    
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(90)
