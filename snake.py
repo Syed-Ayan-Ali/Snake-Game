@@ -1,5 +1,6 @@
 from turtle import Turtle
 
+
 STARTING_POSITIONS = [(0, 0), (20, 0), (40, 0)]
 MOVE_DISTANCE = 20
 TURN_ANGLE = 90
@@ -7,6 +8,7 @@ UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+GAME_OVER = "PLAY"
 
 class Snake:
     def __init__(self) -> None:
@@ -71,4 +73,12 @@ class Snake:
         if self.head.heading() != LEFT:   
             self.head.setheading(0)
             
-           
+    # def collision_with_itself(self):
+        
+
+            # print("NEWWWWWWWWW")
+            # print(f"x = {x}")
+            # print(f"y = {y}")
+            # print(f"head x = {self.head.xcor()}")
+            # print(f"head y = {self.head.ycor()}")
+            
