@@ -53,6 +53,8 @@ with open('high_scores.txt', 'a') as f:
     f.write(f"Score: {score.score}")
     f.write("\n")
 
+
+scoreboard.sort_score_board()
 scoreboard.show_score_board()
 screen.exitonclick()
 
