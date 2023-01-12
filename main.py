@@ -35,6 +35,11 @@ while GAME_STATE == "PLAY":
         food.create_food()
         snake.increase()
         scoreboard.increase()
+    # detect collision with wall
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        GAME_STATE = "FINISHED"
+    
+
 
 screen.exitonclick()
 
