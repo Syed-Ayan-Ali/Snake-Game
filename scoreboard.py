@@ -1,22 +1,12 @@
 from turtle import Turtle
 
+high_scores = []
+
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
-        self.score = 0
-        self.color("white")
-        self.penup()
-        self.goto(0, 250)
-        self.write(f"Score: {self.score}", align="center", font = ("Arial", 24, "normal"))
-        self.hideturtle()
-    
-    def game_over(self):
-        self.goto(0,0)
-        self.write(f"GAME OVER! ", align="center", font = ("Arial", 24, "normal"))
-        
 
-    def increase(self):
-        self.clear()
-        self.score += 1
-        self.write(f"Score: {self.score}", align="center", font = ("Arial", 24, "normal"))
-        
+    def show_score_board(self):
+        for score in high_scores:
+            self.write(f"Score: {score}", align="center", font = ("Arial", 24, "normal"))
+            self.hideturtle()

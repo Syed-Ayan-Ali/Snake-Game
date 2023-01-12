@@ -19,17 +19,21 @@ class Snake:
     def create_snake(self):
         for position in STARTING_POSITIONS:
             new_segment = Turtle("square")
-            new_segment.color("white")
+            if position == STARTING_POSITIONS[0]:
+                new_segment.color("green")
+            else:
+                 new_segment.color("darkgreen")
             new_segment.penup()
             new_segment.goto(position)
             self.segments.append(new_segment)
+            
             # print("SEgments: ",self.segments)
     
     def increase(self):
         new_x = self.segments[len(self.segments) - 1].xcor()
         new_y = self.segments[len(self.segments) - 1].ycor()
         new_segment = Turtle("square")
-        new_segment.color("white")
+        new_segment.color("darkgreen")
         new_segment.penup()
         new_segment.goto((new_x, new_y))
         self.segments.append(new_segment)
