@@ -43,15 +43,12 @@ while GAME_STATE == "PLAY":
         scoreboard.game_over()
 
     # detect collisions with itself
-    if i != 0:
-        for segment in snake.segments:
-            print(segment)
-            if segment == snake.head:
-                pass
-            elif snake.head.distance(segment) < 10:
-                GAME_STATE = "FINISHED"
-                scoreboard.game_over()
-    i+= 1   
+    
+    for i in range(1,len(snake.segments) - 1):   
+        if snake.head.distance(snake.segments[i]) < 10:
+            GAME_STATE = "FINISHED"
+            scoreboard.game_over()
+     
 
 
 screen.exitonclick()
