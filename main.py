@@ -48,10 +48,11 @@ while GAME_STATE == "PLAY":
             GAME_STATE = "FINISHED"
             score.game_over()
      
-    # Add score to high scores
-    with open('high_scores.txt', 'a') as f:
-        f.write(f"Score: {score.score}")
-        f.write("\n")
+# Add score to high scores
+with open('high_scores.txt', 'a') as f:
+    f.write(f"Score: {score.score}")
+    f.write("\n")
 
+scoreboard.show_score_board()
 screen.exitonclick()
 
