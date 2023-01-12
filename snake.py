@@ -21,7 +21,7 @@ class Snake:
             new_segment.penup()
             new_segment.goto(position)
             self.segments.append(new_segment)
-            print("SEgments: ",self.segments)
+            # print("SEgments: ",self.segments)
     
     def increase(self):
         new_x = self.segments[len(self.segments) - 1].xcor()
@@ -31,7 +31,7 @@ class Snake:
         new_segment.penup()
         new_segment.goto((new_x, new_y))
         self.segments.append(new_segment)
-        print("new Segments: ",self.segments)
+        # print("new Segments: ",self.segments)
     
 
     def move(self):
